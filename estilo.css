@@ -1,0 +1,181 @@
+        body {
+            background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/eada19fa-1031-4d4c-90a4-bf8590dec4b7.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Montserrat', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            color: #333;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+        
+        .container-envelope {
+            position: relative;
+            z-index: 1;
+            perspective: 1000px;
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        
+        .envelope {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            transition: all 0.8s ease;
+            transform-origin: center center;
+            z-index: 1; /* Certifique-se de que o z-index do envelope seja menor que o dos botões */
+        }
+
+        
+        .envelope.open {
+            transform: rotateX(180deg) translateY(-50px);
+        }
+        
+        .envelope-front, .envelope-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .envelope-front {
+            background: #f8e8e8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateX(0deg);
+            z-index: 2;
+        }
+        
+        .envelope-back {
+            background: #fff9f9;
+            transform: rotateX(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            z-index: 1;
+        }
+        
+        .envelope-front::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-top: 100px solid #e8cece;
+            transform-origin: top;
+            transition: all 0.8s ease;
+            z-index: 3;
+        }
+        
+        .envelope.open .envelope-front::before {
+            transform: rotateX(180deg);
+            z-index: 0;
+        }
+        
+        .message {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        
+        .envelope.open .message {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .instructions {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        
+       .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            opacity: 0; /* Mantenha assim para que a transição ocorra */
+            transition: all 0.8s ease; /* Transição suave */
+            z-index: 3; /* Aumente o z-index para que fique acima do envelope */
+            position: relative; /* Adicione position relative para que o z-index funcione */
+}
+        
+
+        
+        .btn-yes {
+            background-color: #ff6b6b;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-no {
+            background-color: #adb5bd;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-yes:hover {
+            background-color: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .btn-no:hover {
+            background-color: #868e96;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(134, 142, 150, 0.4);
+        }
+        
+        .click-me {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #8b5a2b;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
