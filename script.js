@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const acceptMsg = 'Estou aceitando seu convite para o encontro!'; // mensagem que vc ira receber se a pessoa aceitar o convite/pedido
         const declineMsg = 'Obrigada pelo convite, mas preciso recusar.'; // mensagem que vc ira receber se a pessoa recusar o convite/pedido
         const message = isAccepted ? acceptMsg : declineMsg;
-        const whatsappUrl = `https://wa.me/5511876568343472483?text=${encodeURIComponent(message)}`; //seu Numero, tudo junto, com o codigo do país e dd
+        const whatsappUrl = `https://wa.me/5599912345678?text=${encodeURIComponent(message)}`; //seu Numero, tudo junto, com o codigo do país e dd
         window.open(whatsappUrl, '_blank'); 
     }
     
