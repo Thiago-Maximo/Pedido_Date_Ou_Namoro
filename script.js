@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Botões que redirecionam para WhatsApp
     function sendWhatsAppMessage(isAccepted) {
         const phoneNumber = 'SEU_NUMERO_AQUI'; // Substitua pelo seu número com código do país
-        const acceptMsg = 'Estou aceitando seu convite para o encontro!';
-        const declineMsg = 'Obrigada pelo convite, mas preciso recusar.';
+        const acceptMsg = 'Estou aceitando seu convite para o encontro!'; // mensagem que vc ira receber se a pessoa aceitar o convite/pedido
+        const declineMsg = 'Obrigada pelo convite, mas preciso recusar.'; // mensagem que vc ira receber se a pessoa recusar o convite/pedido
         const message = isAccepted ? acceptMsg : declineMsg;
-        const whatsappUrl = `https://wa.me/5511949380037?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/seu Numero, tudo junto, com o codigo do país e dd?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     }
     
