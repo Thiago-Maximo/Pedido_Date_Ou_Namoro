@@ -35,7 +35,7 @@ Este repositório foi criado com a intenção de surpreender aquela pessoa espec
 
 ## 🌐 Acesse
 
-👉 [Veja um exemplo ao vivo clicando aqui](https://seulink.github.io/Pedido_Date_Ou_Namoro)
+👉 [Veja um exemplo ao vivo clicando aqui](https://thiago-maximo.github.io/Pedido_Date_Ou_Namoro/)
 
 ---
 
